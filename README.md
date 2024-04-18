@@ -11,7 +11,7 @@ El enfoque de esta entrega es la paciencia, puesto que las nociones iniciales de
 
 1. Clona este repositorio
 ```bash
-$ git clone https://github.com/LucasFeli/Sprint-4.-Typescript-y-API.git
+$ git clone https://github.com/LucasFeli/S5.-Onboarding-digital.git
 ```
 
 2. Puedes desvincular el repositorio asi:

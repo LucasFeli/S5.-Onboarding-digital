@@ -1,45 +1,57 @@
 import { useState } from "react";
 import { Card } from "./Card";
 
-
-
 export function App() {
   const tutorialData = [
     {
-     
+      id: 1,
       title: "Decida Moltes hores",
       description:
         "Un mínim de 30 hores a la setmana. Si no en tens prou, hauràs de dedicar-li més hores. Al principi sembla impossible, però notaràs una millora ràpidament.",
-        
-        imageUrl:"./images/time_managment.svg"
+
+      imageUrl: "./images/time_managment.svg",
     },
     {
+      id: 2,
       title: "Programa projects propis",
       description:
         "Més val 10 hores treballant en projectes propis, que 10 hores mirant tutorials.la motivació i la implicació en el projecte ajudará a accelerar el teu aprenentatge .",
-        imageUrl:"./images/programming.svg"
+      imageUrl: "./images/programming.svg",
     },
     {
+      id: 3,
       title: "Procura descansar",
       description:
         "Descansar bé i desconnectar són vitals. D´aquesta manera reduirás l'estrès i l'ansietat. Milloraràs la teva concentració i consolidaràs el teu aprenentatge",
-       imageUrl:"./images/meditation.svg" 
+      imageUrl: "./images/meditation.svg",
     },
   ];
 
   const [step, setStep] = useState(0);
+  const totalSteps = 3;
 
-  const nextStep = () =>{
-    setStep (prev => prev+1)
-  }
+  const nextStep = () => {
+    if (step < totalSteps - 1) {
+      setStep((nextStep) => nextStep + 1);
+    }
+  };
+
+  const prevStep = () => {
+    if (step > 0) {
+      setStep((prev) => prev - 1);
+    }
+  };
+
   return (
     <>
-      <Card currentCardData={tutorialData[step]}
-      
-      nextStep={nextStep} />
-      
+      <Card
+        currentCardData={tutorialData[step]}
+        step={step}
+        totalSteps={totalSteps}
+        prevStep={prevStep}
+        nextStep={nextStep}
+      />
     </>
-    
   );
 }
 

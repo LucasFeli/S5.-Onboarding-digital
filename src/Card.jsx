@@ -1,9 +1,12 @@
+import { Indicator } from "/src/Indicator";
+
 export const Card = ({
   currentCardData,
   step,
   nextStep,
   prevStep,
   totalSteps,
+  
 }) => {
   return (
     <div className="m-4">
@@ -29,18 +32,9 @@ export const Card = ({
         {/*Paginacion con botones*/}
         <div className="flex items-center justify-between px-6 py-4">
           {/* Paginación con puntos */}
-          <div className="flex space-x-1">
-            {/* Renderizado condicional de los puntos */}
-            {[...Array(totalSteps).keys()].map((_, index) => (
-              <div
-                key={index}
-                className={`h-2 w-2 rounded-full ${
-                  index === step ? "bg-black" : "bg-gray-300"
-                }`}
-              ></div>
-            ))}
-          </div>
-
+          
+          <Indicator totalSteps={totalSteps} currentStep={step} />
+          
           <div className="flex justify-end mt-4">
             {step > 0 && (
               <button
@@ -50,7 +44,7 @@ export const Card = ({
                 ←
               </button>
             )}
-
+           
             {step === 0 && <span className="p-2 invisible">←</span>}
 
             {step < totalSteps - 1 && (

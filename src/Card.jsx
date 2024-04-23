@@ -6,6 +6,7 @@ export const Card = ({
   nextStep,
   prevStep,
   totalSteps,
+  onStepChange
   
 }) => {
   return (
@@ -33,8 +34,8 @@ export const Card = ({
         <div className="flex items-center justify-between px-6 py-4">
           {/* Paginación con puntos */}
           
-          <Indicator totalSteps={totalSteps} currentStep={step} />
-          
+          <Indicator totalSteps={totalSteps} currentStep={step} onStepChange={onStepChange} />
+
           <div className="flex justify-end mt-4">
             {step > 0 && (
               <button

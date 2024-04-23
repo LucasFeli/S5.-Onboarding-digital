@@ -42,6 +42,10 @@ export function App() {
     }
   };
 
+  const handleStepChange = (newStep) => {
+    setStep(newStep);
+  };
+
   return (
     <>
       <Card
@@ -50,6 +54,7 @@ export function App() {
         totalSteps={totalSteps}
         prevStep={prevStep}
         nextStep={nextStep}
+        onStepChange={handleStepChange}
       />
     </>
   );

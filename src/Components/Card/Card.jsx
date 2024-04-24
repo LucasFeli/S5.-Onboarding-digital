@@ -1,4 +1,5 @@
-import { Indicator } from "/src/Indicator";
+import { Indicator } from "../Indicator";
+
 
 export const Card = ({
   currentCardData,
@@ -6,9 +7,10 @@ export const Card = ({
   nextStep,
   prevStep,
   totalSteps,
-  onStepChange
-  
+  onStepChange,
 }) => {
+
+
   return (
     <div className="m-4">
       <div className="max-w-sm mx-auto bg-white rounded-lg overflow-hidden shadow-l">
@@ -19,8 +21,9 @@ export const Card = ({
           <img
             src={currentCardData.imageUrl}
             alt={currentCardData.title}
-            className="rounded-md"
-            style={{ background: "#22e3b9" }}
+            className="rounded-md" 
+            style={{ backgroundColor: currentCardData.bgColor }}
+            
           />
         </div>
 
@@ -33,8 +36,12 @@ export const Card = ({
         {/*Paginacion con botones*/}
         <div className="flex items-center justify-between px-6 py-4">
           {/* Paginación con puntos */}
-          
-          <Indicator totalSteps={totalSteps} currentStep={step} onStepChange={onStepChange} />
+
+          <Indicator
+            totalSteps={totalSteps}
+            currentStep={step}
+            onStepChange={onStepChange}
+          />
 
           <div className="flex justify-end mt-4">
             {step > 0 && (
@@ -45,7 +52,7 @@ export const Card = ({
                 ←
               </button>
             )}
-           
+
             {step === 0 && <span className="p-2 invisible">←</span>}
 
             {step < totalSteps - 1 && (

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card } from "./Card";
+import { Card } from "./Card/Card";
 
 export function App() {
   const tutorialData = [
@@ -10,6 +10,7 @@ export function App() {
         "Un mínim de 30 hores a la setmana. Si no en tens prou, hauràs de dedicar-li més hores. Al principi sembla impossible, però notaràs una millora ràpidament.",
 
       imageUrl: "./images/time_managment.svg",
+      bgColor:"#22e3b9"
     },
     {
       id: 2,
@@ -17,6 +18,7 @@ export function App() {
       description:
         "Més val 10 hores treballant en projectes propis, que 10 hores mirant tutorials.la motivació i la implicació en el projecte ajudará a accelerar el teu aprenentatge .",
       imageUrl: "./images/programming.svg",
+      bgColor:"#b3c7c6"
     },
     {
       id: 3,
@@ -24,6 +26,7 @@ export function App() {
       description:
         "Descansar bé i desconnectar són vitals. D´aquesta manera reduirás l'estrès i l'ansietat. Milloraràs la teva concentració i consolidaràs el teu aprenentatge",
       imageUrl: "./images/meditation.svg",
+      bgColor:"#f0c04f"
     },
   ];
 
